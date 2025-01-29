@@ -1,0 +1,31 @@
+/** . = class # = id **/
+/**nav bar**/
+nav {height:75px; margin-bottom:10px;}
+nav ul {list-style-type:none;}
+a {color: black;}
+nav ul li {float:left; width:220px; text-align:center; padding: 10px;}
+nav ul li a {padding: 10px; display:block; background-color:lightgreen;}
+nav ul li a:hover {background-color: lightblue;}
+#logout:hover {background-color: indianred;}
+
+/**Main style**/
+body {width:1000px; margin:auto; background-color:#2e633f;}
+header, nav, main, footer  {clear:both}
+
+p, h1, h2, h3, li{color:rebeccapurple;}
+
+header,footer{background-color: #efc71f; }
+main{background-color: #499e00;}
+
+/**home page**/
+#homeImageLeftSection{float:left; width:330px; height:400px; margin:25px;}
+#homeTextRightSection{float:right; width:500px; height:400px; margin: 25px;}
+#homeKhaled{width:300px; height:300px}
+
+/**table**/
+.tableStyle td {font-family:Arial, Helvetica, sans-serif; color:#efc71f; font-size:14pt; padding:15px;}
+.tableStyle2 td {font-family:Arial, Helvetica, sans-serif; color:#efc71f; font-size:14pt; padding:25px;}
+#tableStyles td {font-family:Arial, Helvetica, sans-serif; color:purple; font-size:12pt; padding:5px;}
+
+/**media queries**/
+@media screen and (max-width: 600px) {nav ul li{width: 100%; float: centre;} header {display: none;} p {font-size:16px;}}

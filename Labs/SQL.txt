@@ -1,0 +1,79 @@
+CREATE TABLE IF NOT EXISTS Users(
+    userID INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(20) NOT NULL,
+    password VARCHAR(15) NOT NULL,
+    songID INT NULL,
+    albumID INT NULL,
+    PRIMARY KEY (userID)
+    )
+	
+CREATE TABLE IF NOT EXISTS Songs(
+	songID INT NOT NULL AUTO_INCREMENT,
+	title VARCHAR(50) NOT NULL,
+	albumID INT NULL,
+	PRIMARY KEY (songID)
+	)
+	
+CREATE TABLE IF NOT EXISTS Albums(
+	albumID INT NOT NULL AUTO_INCREMENT,
+	title VARCHAR(50) NOT NULL,
+	dropped VARCHAR(10) NOT NULL,
+	cover VARCHAR(40) NOT NULL,
+	PRIMARY KEY (albumID)
+	)
+
+CREATE TABLE IF NOT EXISTS songReview(
+	review VARCHAR(500) NOT NULL,
+	songID INT NOT NULL,
+	userID INT NOT NULL
+	)
+	
+CREATE TABLE IF NOT EXISTS albumReview(
+	review VARCHAR(500) NOT NULL,
+	albumID INT NOT NULL,
+	userID INT NOT NULL
+	)
+	
+INSERT INTO albums (title, dropped, cover) VALUES ('Listennn... the Album','06/06/2006','listenCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('We The Best','12/06/2007','weTheBestCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('We Global','16/09/08','weGlobalCover.jfif');
+INSERT INTO albums (title, dropped, cover) VALUES ('Victory','02/03/2010','victoryCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('We The Best Forever','19/07/2011','weTheBestForeverCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('Kiss The Ring','21/08/2012','kissTheRingCover.jfif');
+INSERT INTO albums (title, dropped, cover) VALUES ('Suffering From Success','22/10/2013','sufferingFromSuccessCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('I Changed A Lot','23/10/2015','iChangedALotCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('Major Key','29/07/2016','majorKeyCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('Grateful','23/06/2017','gratefulCover.jpg;');
+INSERT INTO albums (title, dropped, cover) VALUES ('Father of Asahd','17/05/2019','fatherOfAsahdCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('Khaled Khaled','30/04/2021','khaledKhaledCover.jpg');
+INSERT INTO albums (title, dropped, cover) VALUES ('God Did','26/08/2022','godDidCover.jpg');
+
+INSERT INTO songs (title, albumID) VALUES ('Intro', 1);
+INSERT INTO songs (title, albumID) VALUES ('Born N Raised', 1);
+INSERT INTO songs (title, albumID) VALUES ('Gangsta S***', 1);
+INSERT INTO songs (title, albumID) VALUES ('Grammy Family', 1);
+INSERT INTO songs (title, albumID) VALUES ('Problem', 1);
+INSERT INTO songs (title, albumID) VALUES ('Holla at Me', 1);
+INSERT INTO songs (title, albumID) VALUES ('Addicted', 1);
+INSERT INTO songs (title, albumID) VALUES ('Watch Out', 1);
+INSERT INTO songs (title, albumID) VALUES ('Destroy You', 1);
+INSERT INTO songs (title, albumID) VALUES ('Never Be Nothing Like Me', 1);
+INSERT INTO songs (title, albumID) VALUES ('Candy Paint', 1);
+INSERT INTO songs (title, albumID) VALUES ('MIA', 1);
+INSERT INTO songs (title, albumID) VALUES ('Where You At', 1);
+INSERT INTO songs (title, albumID) VALUES ('Still Fly', 1);
+INSERT INTO songs (title, albumID) VALUES ('Dip Slide Ride Out', 1);
+INSERT INTO songs (title, albumID) VALUES ('Movement', 1);
+INSERT INTO songs (title, albumID) VALUES ('The Future of Dade', 1);
+
+INSERT INTO songs (title, albumID) VALUES ('Intro (We The Best)', 2);
+INSERT INTO songs (title, albumID) VALUES ('The Movement Skit', 2);
+INSERT INTO songs (title, albumID) VALUES ('We Takin’ Over', 2);
+INSERT INTO songs (title, albumID) VALUES ('Brown Paper Bag', 2);
+INSERT INTO songs (title, albumID) VALUES ('I’m So Hood', 2);
+INSERT INTO songs (title, albumID) VALUES ('Before The Solution', 2);
+INSERT INTO songs (title, albumID) VALUES ('I’m From The Ghetto', 2);
+INSERT INTO songs (title, albumID) VALUES ('S On My Chest', 2);
+INSERT INTO songs (title, albumID) VALUES ('Bi*ch I’m From Dade County', 2);
+INSERT INTO songs (title, albumID) VALUES ('The Originators', 2);
+INSERT INTO songs (title, albumID) VALUES ('New York', 2);

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Albums </title>
+		<link rel="stylesheet" type="text/css" href="AAAstyles.css">
+	</head>
+
+	<body>
+		<header style="border:10px; ">
+			<h1> DJ Khaled Music Reviews <h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="songs.html"> Songs </a></li>
+				<li><a href="albums.html"> Albums </a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2>Here is a list of all of DJ Khaled's albums:</h2>
+			
+			<?php
+				require ("../connect_db.php");
+				if (mysqli_connect_error()) {echo "Failed to connect to database: " . mysqli_connect_error() ;}
+
+				$query = "SELECT albumID, cover, title, dropped FROM albums";
+				$result = mysqli_query($dbc, $query);
+
+				if (mysqli_num_rows($result) == 0) {echo '<p>albums not found. time to panic</p>';}
+				else
+ 			
+				{echo "<table id='tableStyle'>";
+				echo "<tr> <th> Album Cover </th> <th> Album Title </th> <th> Date Released </th> </tr>";
+				while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) 
+				{
+					$cover = $row['cover'];
+					$title = $row['title'];
+					$dropped = $row['dropped'];
+					$albumID = $row['albumID'];
+					
+					echo "
+						<tr> 
+							<td> <img style='width:125px; height:125px;' src='AAA_resources/$cover'> </td>
+							<td> $title </td>
+							<td> $dropped </td>
+						</tr>
+						";}
+				echo "</table>";}
+			?>
+		</main>
+		
+		
+</body>
+</html>
