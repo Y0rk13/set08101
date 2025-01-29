@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SET08101 - Web Tech</title>
+		<link rel="stylesheet" type="text/css" href="AAAstyles.css">
+	</head>
+
+	<body>
+		<header style="border:10px; ">
+			<h1> DJ Khaled Music Reviews <h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="songs.html"> Songs </a></li>
+				<li><a href="albums.html"> Albums </a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2>Here is a list of all of DJ Khaled's songs:</h2>
+			
+			<?php
+				require ("../connect_db.php");
+				if (mysqli_connect_error()) {echo "Failed to connect to database: " . mysqli_connect_error() ;}
+
+				$query = "SELECT albums.cover, songs.title, songs.albumID FROM songs, albums WHERE albums.albumID = songs.albumID";
+	
+				$result = mysqli_query($dbc, $query);
+				
+				if (mysqli_num_rows($result) == 0) {echo '<p>songs not found. time to panic!</p>';}
+				
+				else {
+					echo "<table id='tableStyle2'>";
+					echo "<tr> <th> Original Album </th> <th> Song Tiltle </th> </tr>";
+					while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+						echo "<tr>" . "<td>" ."<img style='width:50px; height:50px;' src='AAA_resources/". $row["cover"] . "'></td>" . "<td>" . $row["title"] . "</td>" . "</tr>";
+					}
+					echo "</table>";
+				}
+				
+			?>
+		
+		</main>
+	</body>
+</html>
